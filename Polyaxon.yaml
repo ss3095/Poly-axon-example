@@ -6,7 +6,7 @@ run:
   - git: {
       url: 'https://github.com/ss3095/Poly-axon-example.git',
       revision: 'main',
-      auth: {token: "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"}}
+      access_token: "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"}
   container:
     image: python:3.8
     command: ["pip", "install", "-r", "requirements.txt"]
