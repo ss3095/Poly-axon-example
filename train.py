@@ -29,3 +29,4 @@ def train_eval():
 
 with open("metrics.txt", "w") as outfile:
     outfile.write("RMSE score of the model: " + str(train_eval()) + "\n")
+    print("Writing RMSE score to metrics.txt")
