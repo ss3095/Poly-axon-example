@@ -2,11 +2,14 @@ version: 1.1
 kind: component
 run:
   kind: job
+  connections:
+  - your-data-connection
   init:
-  - git: {
-      url: 'https://github.com/ss3095/Poly-axon-example.git',
-      revision: 'main',
-      access_token: "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"}
+  - git:
+      url: 'https://github.com/ss3095/Poly-axon-example.git'
+      revision: 'main'
+  - connection: your-data-connection
+    git: {}
   container:
     image: python:3.8
     command: ["pip", "install", "-r", "requirements.txt"]
