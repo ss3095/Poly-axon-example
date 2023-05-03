@@ -5,16 +5,9 @@ run:
   init:
   - git: {
       url: 'https://github.com/ss3095/Poly-axon-example.git',
-      revision: 'main',
-      auth: {token: "{{ github_token }}"}
+      revision: 'main'
     }
   container:
     image: python:3.8
     command: ["pip", "install", "-r", "requirements.txt"]
     args: ["python", "train.py"]
-    env:
-    - name: GITHUB_TOKEN
-      valueFrom:
-        secretKeyRef:
-          name: github-token
-          key: token
