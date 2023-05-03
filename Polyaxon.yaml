@@ -1,0 +1,10 @@
+version: 1.1
+kind: component
+run:
+  kind: job
+  init:
+  - git: {url: 'https://github.com/ss3095/Poly-axon-example.git', revision: 'main', auth: {tokenRef: 'github-token'}}
+  container:
+    image: python:3.8
+    command: ["pip", "install", "-r", "requirements.txt"]
+    args: ["python", "train.py"]
